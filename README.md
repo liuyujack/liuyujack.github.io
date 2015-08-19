@@ -11,8 +11,7 @@ So I have done this.
 Any questions please email me.
 
 ### Subsites:
-1. [emberTest1]("http://liuyujack.github.io/emberTest1") - for learning Ember.js
-2. [testSite]("http://liuyujack.github.io/testSite") - Purely for testing.
+1. [emberTest1](http://liuyujack.github.io/emberTest1) - for learning Ember.js
+2. [testSite](http://liuyujack.github.io/testSite) - Purely for testing.
 
-
-## _Thank you very much._
+### _Thank you very much._
