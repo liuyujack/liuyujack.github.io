@@ -29,6 +29,28 @@
     <p>Seems very hard.</p>
   </script>
 
+  <script type="text/x-handlebars" id="testimonial">
+    <h3>Testimonials</h3>
+    <<div>
+      <label>You Name: </label>
+      {{input type="text"  value=userName size="20"}}
+      <label>Message: </label>
+      {{textarea value=message cols="20" rows="6"}}
+
+      <button {{action 'saveTestimonial'}}>Save</button>
+    </div>
+    <div>
+      {{#if testimonials}}
+        <h4>Testimonials</h4>
+        {{#each item in testimonials}}
+        <div>
+          <b>{{item.userName}}</b> : {{item.message}}
+        </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  </script>
+
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/ember-template-compiler-1.12.0.js"></script>
   <script src="js/libs/ember-1.12.0.debug.js"></script>

@@ -13,7 +13,7 @@ App.IndexRoute = Ember.Route.extend({
 });
 
 App.AboutRoute = Ember.Route.extend({
-  
+
 });
 
 App.TestimonialRoute = Ember.Route.extend({
@@ -24,4 +24,24 @@ App.IndexController = Ember.ArrayController.extend({
 	sortedModel: function() {
 		return this.get('model').sort();
 	}.property('@each')
+});
+
+App.TestimonialController = Ember.ObjectController.extend({
+  userName: '',
+  message: '',
+  testimonials: [],
+  actions: {
+    saveTestimonial: function(){
+      var userName = this.get('userName');
+      var message = this.get('message');
+      if(!userName || !message)
+      {
+       return;
+       }
+      this.get('testimonials').pushObject({
+         userName: userName,
+         message: message
+       });
+    }
+  }
 });
