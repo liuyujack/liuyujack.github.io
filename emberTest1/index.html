@@ -9,16 +9,24 @@
 <body>
   <script type="text/x-handlebars">
     <h2>Welcome to Ember.js</h2>
+    {{#link-to 'index'}}Index{{/link-to}}
+    {{#link-to 'about'}}About{{/link-to}}
+    {{#link-to 'testimonial'}}Testimonials{{/link-to}}
 
     {{outlet}}
   </script>
 
   <script type="text/x-handlebars" id="index">
     <ul>
-    {{#each item in model}}
+    {{#each item in sortedModel}}
       <li>{{item}}</li>
     {{/each}}
     </ul>
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    <h3>I am about to learn <strong>Ember</strong>.</h3>
+    <p>Seems very hard.</p>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
