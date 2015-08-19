@@ -42,6 +42,8 @@ App.TestimonialController = Ember.ObjectController.extend({
          userName: userName,
          message: message
        });
+      this.set('userName')="";
+      this.set('message')="";
     }
   }
 });
