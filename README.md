@@ -14,5 +14,7 @@ Any questions please email me.
 1. [emberTest1](http://liuyujack.github.io/emberTest1) - for learning Ember.js
 2. [testSite](http://liuyujack.github.io/testSite) - Purely for testing.
 3. [Online Pizza Store Test Project](http://liuyujack.github.io/OnlinePizza) - learn from the tutorial.
+4. [FireFox App](http://liuyujack.github.io/FFOS-App) - Learn using Ember builing Firefox apps.
+
 
 ### _Thank you very much._
