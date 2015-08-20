@@ -91,8 +91,8 @@
       </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="back-button">
-      <button type="button" class="btn btn-info" {{action: back}}>back</button>
+    <script type="text/x-handlebars" data-template-name="components/back-button">
+      <button type="button" {{action "back"}} class="btn btn-info">back</button>
     </script>
 
     <script type="text/x-handlebars" id="components/single-pizza">
@@ -109,6 +109,64 @@
                 </div>
             </div>
         </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="cart">
+      <h1>Cart</h1>
+      {{#each cart in model}}
+        {{single-pizza pizza=cart.pizza cart=true}}
+      {{/each}}
+
+      {{#if model}}
+      <div class="row" style="clear: both">
+        <button type="button" {{action "checkout"}} class="btn btn-primary"> Check Out Now</button>
+      </div>
+      {{/if}}
+
+      {{#unless model}}
+        <h4>No Items in your cart yet.</h4>
+      {{/unless}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="history">
+      <h1>Order History</h1>
+      <div class="col-md-4">
+        <ul>
+          {{#each order in model}}
+          <li>
+            {{#link-to 'history.details' order}}
+              Order {{order.id}}
+            {{/link-to}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col-md-8">
+        {{outlet}}
+      </div>
+      {{#unless model}}
+        <h4>You have not order anything yet.</h4>
+      {{/unless}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="history/details">
+      {{#if order}}
+        <h3>Order Details</h3>
+        <table class="table table-hover">
+          <tbody>
+            {{#each o in order}}
+            <tr>
+              <td>
+                {{o.id}}
+              </td>
+              <td>
+                {{#link-to 'pizza' o.pizza }}{{o.pizza.name}}{{/link-to}}
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{/if}}
     </script>
 
     <script src="js/libs/jquery-1.10.2.js"></script>
